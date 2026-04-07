@@ -13,7 +13,9 @@ spec:
         app: flask-app
     spec:
       containers:
-      - name: flask-app
-        image: rg7121/argoproject:latest
+      - name: app
+        image: hashicorp/http-echo
+        args:
+        - "-text=Hello from v1"
         ports:
-        - containerPort: 5000
+        - containerPort: 5678
